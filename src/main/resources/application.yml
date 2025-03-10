@@ -1,0 +1,23 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/sos_app
+    username: sos_user
+    password: sos_password
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: none # Отключаем автоматическое создание таблиц Hibernate
+
+  flyway:
+    enabled: true
+    locations: classpath:/db/migration
+    baseline-on-migrate: true
+
+telegram:
+  bot-token: "YOUR_TELEGRAM_BOT_TOKEN" # Замените на ваш токен
+  chat-id: "YOUR_CHAT_ID" # Замените на ID чата
